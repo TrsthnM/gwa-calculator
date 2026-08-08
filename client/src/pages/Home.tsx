@@ -124,17 +124,20 @@ const Home = () => {
 
   return (
     <div
-      className={`${theme} min-h-screen w-full bg-(--bg) flex justify-center px-4 py-10 transition-colors duration-300`}
+      className={`${theme} min-h-screen w-full max-w-full overflow-x-hidden bg-(--bg) flex justify-center px-4 py-10 transition-colors duration-300 box-border`}
     >
-      <div className="w-full max-w-sm">
+      <div className="w-full max-w-sm min-w-0">
         {/* Header */}
-        <div className="mb-4 flex items-start justify-between">
-          <div>
+        <div className="mb-4 flex items-start justify-between gap-3">
+          <div className="min-w-0">
             <p className="text-[11px] tracking-[0.25em] text-(--accent) uppercase mb-1">
               Report Sheet
             </p>
-            <h1 className="text-(--text) text-3xl font-serif tracking-tight">
-              GWA Calculator <span className='text-(--text) text-xs tracking-wide pl-2'>By Tristhan</span>
+            <h1 className="text-(--text) text-3xl font-serif tracking-tight flex flex-wrap items-baseline gap-x-2">
+              <span>GWA Calculator</span>
+              <span className="text-(--text) text-xs tracking-wide font-sans opacity-80 whitespace-nowrap">
+                By Tristhan
+              </span>
             </h1>
             <p className="text-(--muted) text-sm mt-1">
               Add your subjects and units, then enter your grades.
@@ -199,28 +202,30 @@ const Home = () => {
           <label className="text-[11px] tracking-[0.15em] text-(--muted) uppercase mb-2 block">
             Name Subject
           </label>
-          <div className="flex gap-2">
+          <div className="flex flex-col gap-2 w-full">
             <input
               type="text"
               value={subjectInput}
               onChange={(e) => setSubjectInput(e.target.value)}
               placeholder="e.g. Physics"
-              className="flex-1 bg-(--card) border border-(--border) rounded-lg px-3 py-2.5 text-(--text) placeholder:text-(--placeholder) text-sm outline-none focus:border-(--accent) transition-colors"
+              className="w-full min-w-0 box-border bg-(--card) border border-(--border) rounded-lg px-3 py-2.5 text-(--text) placeholder:text-(--placeholder) text-base outline-none focus:border-(--accent) transition-colors"
             />
-            <input
-              type="text"
-              inputMode="decimal"
-              value={unitsInput}
-              onChange={(e) => setUnitsInput(e.target.value)}
-              placeholder="Units"
-              className="w-20 bg-(--card) border border-(--border) rounded-lg px-3 py-2.5 text-(--text) placeholder:text-(--placeholder) text-sm outline-none focus:border-(--accent) transition-colors"
-            />
-            <button
-              onClick={handleAddSubject}
-              className="shrink-0 bg-(--accent) text-(--accent-contrast) font-medium text-sm px-4 rounded-lg active:scale-95 transition-transform"
-            >
-              Add
-            </button>
+            <div className="flex gap-2 w-full">
+              <input
+                type="text"
+                inputMode="decimal"
+                value={unitsInput}
+                onChange={(e) => setUnitsInput(e.target.value)}
+                placeholder="Units"
+                className="w-20 shrink-0 min-w-0 box-border bg-(--card) border border-(--border) rounded-lg px-2 py-2.5 text-(--text) placeholder:text-(--placeholder) text-base text-center outline-none focus:border-(--accent) transition-colors"
+              />
+              <button
+                onClick={handleAddSubject}
+                className="flex-1 min-w-0 box-border bg-(--accent) text-(--accent-contrast) font-medium text-sm px-3 rounded-lg active:scale-95 transition-transform"
+              >
+                Add Subject
+              </button>
+            </div>
           </div>
         </div>
 
@@ -255,7 +260,7 @@ const Home = () => {
                   value={subject.grade}
                   onChange={(e) => handleGradeChange(subject.id, e.target.value)}
                   placeholder="—"
-                  className="w-14 bg-transparent border border-(--border) rounded-md px-2 py-1.5 text-center text-(--text) font-mono text-sm placeholder:text-(--placeholder) outline-none focus:border-(--accent) transition-colors"
+                  className="w-16 shrink-0 min-w-0 box-border bg-transparent border border-(--border) rounded-md px-1 py-1.5 text-center text-(--text) font-mono text-base placeholder:text-(--placeholder) outline-none focus:border-(--accent) transition-colors"
                 />
 
                 <button

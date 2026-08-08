@@ -5,3 +5,35 @@
 * {
   font-family: 'Poppins', sans-serif;
 }
+
+html, body {
+  background-color: #101826;
+}
+
+:root {
+  --bg: #F6F2E9;
+  --card: #FFFFFF;
+  --border: #DDD5C3;
+  --text: #2A2418;
+  --muted: #7A7160;
+  --placeholder: #B5AC98;
+  --accent: #A67C2E;
+  --accent-contrast: #FFFFFF;
+  --error-border: rgba(178, 58, 58, 0.4);
+  --error-bg: rgba(178, 58, 58, 0.08);
+  --error-text: #A33A3A;
+}
+
+.dark {
+  --bg: #101826;
+  --card: #1B2536;
+  --border: #2C3648;
+  --text: #EDEAE0;
+  --muted: #8D96A8;
+  --placeholder: #5C6579;
+  --accent: #C9A24B;
+  --accent-contrast: #101826;
+  --error-border: rgba(201, 87, 90, 0.4);
+  --error-bg: rgba(201, 87, 90, 0.1);
+  --error-text: #E19194;
+}
